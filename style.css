@@ -46,10 +46,10 @@ body {
         transform: translateY(-10px);
     }
 }
-.flag__birthday .flag__left{
+.flag_birthday .flag_left{
     transform: rotate(-10deg) translate(-20px,30px);
 }
-.flag__birthday .flag__right{
+.flag_birthday .flag_right{
     transform: rotate(10deg) translate(20px,30px) scaleX(-1);
 }
 .content{
@@ -180,7 +180,7 @@ body {
         transform: rotate(0deg);
     }
 }
-.date__of__birth, .name{
+.date_of_birth, .name{
     display: flex;
     justify-content:space-around;
     align-items: center;
@@ -190,7 +190,7 @@ body {
     font-family: "Sriracha", cursive;
     
 }
-.date__of__birth{
+.date_of_birth{
     border: 3px solid var(--color-black);
     position: relative;
     transform: translateY(-100px);
@@ -230,11 +230,11 @@ body {
     border: 3px solid var(--color-black);
     font-family: 'Dancing Script', cursive;
 }
-.date__of__birth span, .name span{
+.date_of_birth span, .name span{
     font-weight: bold;
     margin: 0px 40px;
 }
-.date__of__birth span{
+.date_of_birth span{
     font-size: 1.2rem;
 }
 .name span{
@@ -465,7 +465,7 @@ body {
     z-index: 10;
     display: none;
 }
-.box__letter .letter__border{
+.box_letter .letter_border{
     position: absolute;
     width: 55vw;
     height: 450px;
@@ -499,7 +499,7 @@ body {
     border-radius: 10px;
     padding-top: 15px;
 }
-.letter__border .letter .title__letter{
+.letter_border .letter .title_letter{
     text-align: center;
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
@@ -509,7 +509,7 @@ body {
     margin-left: 5px;
     font-size: 1.3rem;
 }
-.letter__border .letter .content__letter{
+.letter_border .letter .content_letter{
     position: relative;
     width: 100%;
     height: 100%;
@@ -517,14 +517,14 @@ body {
     padding-top: 1.5rem;
     padding-bottom: 70px;
 }
-.letter__border .letter .content__letter .left{
+.letter_border .letter .content_letter .left{
     position: relative;
     width: 50%;
     height: 100%;
     padding: 1.7rem;
     border-right: 3px solid var(--color-border);
 }
-.content__letter .left #heart__letter{
+.content_letter .left #heart_letter{
     opacity: 0;
     width: 100%;
 }
@@ -582,7 +582,7 @@ body {
     position: relative;
     width: 50%;
 }
-.content__letter .right .love__img{
+.content_letter .right .love_img{
     opacity: 0;
     position: absolute;
     right: 20px;
@@ -591,7 +591,7 @@ body {
 .love__img.animationOp{
     animation: opacityHeart 1s 1s forwards;
 }
-.content__letter .right .text__letter{
+.content_letter .right .text_letter{
     margin-top: 60px;
     padding: 20px 15px 10px 15px;
     font-family: 'Dancing Script', cursive;
@@ -632,11 +632,11 @@ body {
 
 @media screen and (max-width: 658px)   {
 
-    .flag__birthday .flag__left {
+    .flag_birthday .flag_left {
         transform: rotate(-10deg) translate(-119px,3px);
     }
 
-    .flag__birthday .flag__right {
+    .flag_birthday .flag_right {
         transform: rotate(10deg) translate(-106px,39px) scaleX(-1);
     }
 
@@ -703,7 +703,7 @@ body {
         animation: topHat 4s 7s forwards ease;
     }
 
-    .box__letter .letter__border {
+    .box_letter .letter_border {
         position: absolute;
         width: 90vw;
         height: 315px;
@@ -725,14 +725,14 @@ body {
         padding-top: 15px;
     }
 
-    .letter__border .letter .title__letter {
+    .letter_border .letter .title_letter {
         text-align: center;
         font-family: 'Dancing Script', cursive;
         font-weight: bold;
         font-size: 1.4rem;
     }
 
-    .letter__border .letter .content__letter {
+    .letter_border .letter .content_letter {
         position: relative;
         width: 100%;
         height: 100%;
@@ -741,14 +741,14 @@ body {
         padding-bottom: 70px;
     }
 
-    .content__letter .right .text__letter {
+    .content_letter .right .text_letter {
         margin-top: -14px;
         padding: 20px 15px 10px 15px;
         font-family: 'Dancing Script', cursive;
         font-size: .8rem;
     }
 
-    .content__letter .right .love__img {
+    .content_letter .right .love_img {
         opacity: 0;
         position: absolute;
         right: 126px;
@@ -1022,4 +1022,94 @@ body {
     cursor: pointer;
     color: white;
     z-index: 10000000000000000;
+}
+
+/* Sound popup styles */
+.sound-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999;
+}
+
+.sound-popup-content {
+    background: linear-gradient(135deg, #78c5ff, #ff78a7);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
+    animation: popupBounce 0.5s ease-out;
+}
+
+@keyframes popupBounce {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.sound-popup-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sound-popup-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#enableSoundBtn {
+    background: linear-gradient(135deg, #ff78a7, #78c5ff);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+}
+
+#enableSoundBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ff5a8a, #5ab0ff);
+}
+
+#enableSoundBtn:active {
+    transform: translateY(-1px);
+}
+
+/* Animation control */
+.animations-paused * {
+    animation-play-state: paused !important;
+}
+
+/* Exception for sound popup */
+.sound-popup,
+.sound-popup * {
+    animation-play-state: running !important;
 }

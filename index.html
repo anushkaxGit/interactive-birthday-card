@@ -48,7 +48,7 @@
                         <img src="./images/hat.png" alt="" width="130">
                     </div>
                 </div>
-                <div class="date__of__birth">
+                <div class="date_of_birth">
                     <span></span>
                 </div>
                 <div class="btn">
@@ -147,7 +147,7 @@ Just remember:
 No matter how old you get,
 You’ll always be the baby who stole my snacks,my toys..and my heart🥹
 Have a blast, laugh till your cheeks hurt, and never stop being the funny, goofy, amazing little brother you are!
-Now go blow out those candles (with ninja powers!) and make a wish! 🥳🕯️🦸
+Now go blow out those candles (with ninja powers!) and make a wish! 🥳🕯🦸
                         </h2>
 
                         <div class="imageCute2">
@@ -157,6 +157,22 @@ Now go blow out those candles (with ninja powers!) and make a wish! 🥳🕯️�
                 </div>
             </div>
         </div>
+
+        <!-- Audio element for birthday melody -->
+        <audio id="birthdayMelody" preload="auto" loop>
+            <source src="melody.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Sound popup -->
+        <div id="soundPopup" class="sound-popup">
+            <div class="sound-popup-content">
+                <h3>🎵 Enable Sound</h3>
+                <p>Click to enable birthday music!</p>
+                <button id="enableSoundBtn">🔊 Click for Sound</button>
+            </div>
+        </div>
+
     </div>
 
 </body>
@@ -170,23 +186,61 @@ Now go blow out those candles (with ninja powers!) and make a wish! 🥳🕯️�
     let currentIndex = 0;
     let currentIndexLetter = 0;
     let currentIndexTitle = 0;
-    let date__of__birth = document.querySelector(".date__of__birth span");
-    let text__letter = document.querySelector(".text__letter p");
-    setTimeout(function () {
-        timeDatetxt = setInterval(function () {
-            if (currentIndex < charArrDate.length) {
-                date__of__birth.textContent += charArrDate[currentIndex];
-                currentIndex++;
-            }
-            else {
-                let i = document.createElement("i");
-                i.className = "fa-solid fa-star"
-                document.querySelector(".date__of__birth").prepend(i)
-                document.querySelector(".date__of__birth").appendChild(i.cloneNode(true))
-                clearInterval(timeDatetxt)
-            }
-        }, 100)
-    }, 12000)
+    let date_ofbirth = document.querySelector(".dateof_birth span");
+    let text_letter = document.querySelector(".text_letter p");
+    
+    // Sound control variables
+    const audio = document.getElementById('birthdayMelody');
+    const soundPopup = document.getElementById('soundPopup');
+    const enableSoundBtn = document.getElementById('enableSoundBtn');
+    let soundEnabled = false;
+    let timeDatetxt;
+    
+    // Set audio volume
+    audio.volume = 0.5;
+    
+    // Show sound popup when page loads and pause animations
+    window.addEventListener('load', function() {
+        soundPopup.style.display = 'flex';
+        // Add class to pause all animations
+        document.body.classList.add('animations-paused');
+    });
+    
+    // Handle enable sound button click
+    enableSoundBtn.addEventListener('click', function() {
+        // Hide popup
+        soundPopup.style.display = 'none';
+        soundEnabled = true;
+        
+        // Remove class to resume all animations
+        document.body.classList.remove('animations-paused');
+        
+        // Start playing the melody
+        audio.play().then(() => {
+            console.log('Birthday melody started playing');
+        }).catch(error => {
+            console.log('Error playing audio:', error);
+        });
+        
+        // Start the date animation
+        setTimeout(function () {
+            timeDatetxt = setInterval(function () {
+                if (currentIndex < charArrDate.length) {
+                    date_of_birth.textContent += charArrDate[currentIndex];
+                    currentIndex++;
+                }
+                else {
+                    let i = document.createElement("i");
+                    i.className = "fa-solid fa-star"
+                    document.querySelector(".date_of_birth").prepend(i)
+                    document.querySelector(".date_of_birth").appendChild(i.cloneNode(true))
+                    clearInterval(timeDatetxt)
+                }
+            }, 100)
+        }, 12000);
+    });
+    
+    // Remove the original date animation timer since it's now controlled by sound enable
 
     var intervalContent;
     var intervalTitle;

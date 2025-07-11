@@ -46,10 +46,10 @@ body {
         transform: translateY(-10px);
     }
 }
-.flag_birthday .flag_left{
+.flag__birthday .flag__left{
     transform: rotate(-10deg) translate(-20px,30px);
 }
-.flag_birthday .flag_right{
+.flag__birthday .flag__right{
     transform: rotate(10deg) translate(20px,30px) scaleX(-1);
 }
 .content{
@@ -180,7 +180,7 @@ body {
         transform: rotate(0deg);
     }
 }
-.date_of_birth, .name{
+.date__of__birth, .name{
     display: flex;
     justify-content:space-around;
     align-items: center;
@@ -190,7 +190,7 @@ body {
     font-family: "Sriracha", cursive;
     
 }
-.date_of_birth{
+.date__of__birth{
     border: 3px solid var(--color-black);
     position: relative;
     transform: translateY(-100px);
@@ -230,11 +230,11 @@ body {
     border: 3px solid var(--color-black);
     font-family: 'Dancing Script', cursive;
 }
-.date_of_birth span, .name span{
+.date__of__birth span, .name span{
     font-weight: bold;
     margin: 0px 40px;
 }
-.date_of_birth span{
+.date__of__birth span{
     font-size: 1.2rem;
 }
 .name span{
@@ -465,7 +465,7 @@ body {
     z-index: 10;
     display: none;
 }
-.box_letter .letter_border{
+.box__letter .letter__border{
     position: absolute;
     width: 55vw;
     height: 450px;
@@ -499,7 +499,7 @@ body {
     border-radius: 10px;
     padding-top: 15px;
 }
-.letter_border .letter .title_letter{
+.letter__border .letter .title__letter{
     text-align: center;
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
@@ -509,7 +509,7 @@ body {
     margin-left: 5px;
     font-size: 1.3rem;
 }
-.letter_border .letter .content_letter{
+.letter__border .letter .content__letter{
     position: relative;
     width: 100%;
     height: 100%;
@@ -517,14 +517,14 @@ body {
     padding-top: 1.5rem;
     padding-bottom: 70px;
 }
-.letter_border .letter .content_letter .left{
+.letter__border .letter .content__letter .left{
     position: relative;
     width: 50%;
     height: 100%;
     padding: 1.7rem;
     border-right: 3px solid var(--color-border);
 }
-.content_letter .left #heart_letter{
+.content__letter .left #heart__letter{
     opacity: 0;
     width: 100%;
 }
@@ -582,7 +582,7 @@ body {
     position: relative;
     width: 50%;
 }
-.content_letter .right .love_img{
+.content__letter .right .love__img{
     opacity: 0;
     position: absolute;
     right: 20px;
@@ -591,7 +591,7 @@ body {
 .love__img.animationOp{
     animation: opacityHeart 1s 1s forwards;
 }
-.content_letter .right .text_letter{
+.content__letter .right .text__letter{
     margin-top: 60px;
     padding: 20px 15px 10px 15px;
     font-family: 'Dancing Script', cursive;
@@ -632,11 +632,11 @@ body {
 
 @media screen and (max-width: 658px)   {
 
-    .flag_birthday .flag_left {
+    .flag__birthday .flag__left {
         transform: rotate(-10deg) translate(-119px,3px);
     }
 
-    .flag_birthday .flag_right {
+    .flag__birthday .flag__right {
         transform: rotate(10deg) translate(-106px,39px) scaleX(-1);
     }
 
@@ -703,7 +703,7 @@ body {
         animation: topHat 4s 7s forwards ease;
     }
 
-    .box_letter .letter_border {
+    .box__letter .letter__border {
         position: absolute;
         width: 90vw;
         height: 315px;
@@ -725,14 +725,14 @@ body {
         padding-top: 15px;
     }
 
-    .letter_border .letter .title_letter {
+    .letter__border .letter .title__letter {
         text-align: center;
         font-family: 'Dancing Script', cursive;
         font-weight: bold;
         font-size: 1.4rem;
     }
 
-    .letter_border .letter .content_letter {
+    .letter__border .letter .content__letter {
         position: relative;
         width: 100%;
         height: 100%;
@@ -741,14 +741,14 @@ body {
         padding-bottom: 70px;
     }
 
-    .content_letter .right .text_letter {
+    .content__letter .right .text__letter {
         margin-top: -14px;
         padding: 20px 15px 10px 15px;
         font-family: 'Dancing Script', cursive;
         font-size: .8rem;
     }
 
-    .content_letter .right .love_img {
+    .content__letter .right .love__img {
         opacity: 0;
         position: absolute;
         right: 126px;
